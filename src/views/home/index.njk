@@ -6,35 +6,77 @@
 {% endblock %}    
 
 {% block content %}
-    <div class="content">
-        <div class="row">
-            <div class="col-md-4">
-                <form action="/productslist">
-                    <button class="button product">Cadastro de Produtos <i class="bi bi-cart-check"></i></button>
-                </form>
-            </div>   
-            <div class="col-md-4">
-                <form action="/cart">
-                    <button class="button sale">Realizar Vendas <i class="bi bi-bag"></i></button>
-                </form>
-            </div> 
+    <div class="d-flex">
+        <!-- Menu Lateral -->
+        <div class="sidebar bg-primary text-white d-flex flex-column justify-content-between p-4" style="width: 250px; height: 100vh; position: fixed; left: 0; top: 0; bottom: 0;">
+            <h2 class="fw-bold">Nome da sua empresa</h2>
+            <nav class="nav flex-column gap-3">
+                <a href="/productslist" class="nav-link text-white"><i class="bi bi-cart-plus"></i> Cadastro de Produtos</a>
+                <a href="/sales" class="nav-link text-white"><i class="bi bi-receipt"></i> Vendas</a>
+                <a href="/cart" class="nav-link text-white"><i class="bi bi-basket"></i> Realizar Vendas</a>
+                <a href="/entrancesandexits" class="nav-link text-white"><i class="bi bi-bar-chart-line"></i> Entrada e Saída</a>
+            </nav>
+            <div>
+                <a href="/logout" class="nav-link text-white"><i class="bi bi-power"></i> Sair</a>
+            </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <div class="row">
-            <div class="col-md-4">
-                <form action="/entrancesandexits">
-                    <button class="button entrance-exit">Entrada e Saída <i class="bi bi-bar-chart-line"></i></button>
-                </form>
-            </div>   
-            <div class="col-md-4">
-                <form action="/sales">
-                    <button class="button datails-sales">Detalhes de Vendas <i class="bi bi-graph-up"></i></button>
-                </form>
-            </div> 
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content p-4 w-100" style="margin-left: 260px;">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card bg-success text-white shadow">
+                        <div class="card-body text-center">
+                            <h2>R$ 5.370,00</h2>
+                            <p>Entradas no mês</p>
+                            <span>45,92%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-danger text-white shadow">
+                        <div class="card-body text-center">
+                            <h2>R$ 5.490,00</h2>
+                            <p>Saídas no mês</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-warning text-white shadow">
+                        <div class="card-body text-center">
+                            <h2>R$ 23.927,00</h2>
+                            <p>Falta para atingir o limite anual</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <h4 class="fw-bold">Faturamento e Cálculo</h4>
+                    <div class="chart-placeholder bg-secondary text-white rounded d-flex align-items-center justify-content-center" style="height: 300px;">
+                        <span>Gráfico de Faturamento</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="fw-bold">Despesas</h4>
+                    <div class="chart-placeholder bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="height: 300px; width: 300px;">
+                        <span>R$ 5.490,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <button class="btn btn-primary w-100 py-3 fw-bold">MOVIMENTAÇÕES</button>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary w-100 py-3 fw-bold">CENTRO DE CUSTO</button>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary w-100 py-3 fw-bold">RELATÓRIOS</button>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
-        
-        
