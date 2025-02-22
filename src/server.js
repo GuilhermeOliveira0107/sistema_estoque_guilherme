@@ -8,9 +8,12 @@ const methodOverride = require("method-override");
 const session = require("./config/session");
 const cors = require("cors");
 const path = require("path");
+const cookieParser = require("cookie-parser"); // 🔹 Adicionado para manipular cookies
 
 const app = express();
 app.use(cors());
+app.use(cookieParser()); // 🔹 Middleware para lidar com cookies HTTPOnly
+
 
 app.use(express.static("public"));
 
